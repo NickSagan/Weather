@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="1LS-ju-bFG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aMj-Si-Ldc">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
@@ -31,9 +34,10 @@
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" backgroundImage="location.circle" catalog="system"/>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-6X-Lrk">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-6X-Lrk">
                                                 <rect key="frame" x="50" y="0.0" width="274" height="40"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-Si-OUR">
@@ -97,6 +101,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aMj-Si-Ldc" secondAttribute="trailing" constant="20" id="2Eh-A5-0yx"/>
+                            <constraint firstItem="1LS-ju-bFG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3zg-LL-C6i"/>
+                            <constraint firstAttribute="bottom" secondItem="1LS-ju-bFG" secondAttribute="bottom" id="GFm-Ge-97S"/>
+                            <constraint firstItem="1LS-ju-bFG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Sfg-TH-HNB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1LS-ju-bFG" secondAttribute="trailing" id="XZT-SJ-L01"/>
                             <constraint firstItem="aMj-Si-Ldc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tBz-QI-sj3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aMj-Si-Ldc" secondAttribute="bottom" id="tE3-XP-ThT"/>
                             <constraint firstItem="aMj-Si-Ldc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zR6-fj-Yfc"/>
@@ -109,11 +117,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="662" height="662"/>
         <image name="location.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="sun.max" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
