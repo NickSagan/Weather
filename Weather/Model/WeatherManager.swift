@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct WeatherManager {
     let weatherUrl = "https://api.openweathermap.org/data/2.5/weather?APPID=37c26fc1dd13df134b731718ed86e450&units=metric"
@@ -21,18 +22,30 @@ struct WeatherManager {
     }
     
     func performRequest(urlString: String) {
-        // 1. create URL
+        // 1. URL
         guard let url = URL(string: urlString) else { return }
         
-        // 2. Create URL Session
+        // 2. URLSession
         let session = URLSession(configuration: .default)
         
-        // 3. Give the session a task
-        let task = session.dataTask(with: url) { <#Data?#>, <#URLResponse?#>, <#Error?#> in
-            <#code#>
+        // 3. Task
+        let task = session.dataTask(with: url) { data, response, error in
+            if error != nil { print(error as Any); return }
+            guard let safeData = data else { return }
+            parseJSON(weatherData: safeData)
         }
         
-        // 4. Start the task
+        // 4. Resume
         task.resume()
+    }
+    
+    func parseJSON(weatherData: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+        } catch {
+            print(error)
+        }
+        
     }
 }
