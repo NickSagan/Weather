@@ -43,21 +43,15 @@ struct WeatherManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
+            let id = decodedData.weather[0].id
+            let temp = decodedData.main.temp
+            let name = decodedData.name
+            let description = decodedData.weather[0].description
+            
+            let weather = WeatherModel(conditionID: id, cityName: name, temperature: temp, description: description)
+            return weather
         } catch {
             print(error)
-        }
-    }
-    
-    func getConditionName(weatherId: Int) -> String {
-        switch weatherId {
-        case 200...299: return "cloud.bolt.rain"
-        case 300...399: return "cloud.drizzle"
-        case 500...599: return "cloud.rain"
-        case 600...699: return "snowflake"
-        case 700...799: return "wind"
-        case 800: return "sun.max"
-        case 801...899: return "cloud.sun"
-        default: return "cloud.sun"
         }
     }
 }
