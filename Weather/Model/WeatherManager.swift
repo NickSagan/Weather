@@ -39,7 +39,7 @@ struct WeatherManager {
         task.resume()
     }
     
-    func parseJSON(weatherData: Data) {
+    func parseJSON(weatherData: Data) -> WeatherModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
@@ -50,8 +50,10 @@ struct WeatherManager {
             
             let weather = WeatherModel(conditionID: id, cityName: name, temperature: temp, description: description)
             return weather
+            
         } catch {
             print(error)
+            return nil
         }
     }
 }
