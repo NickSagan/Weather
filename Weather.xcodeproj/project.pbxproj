@@ -15,6 +15,7 @@
 		912EEF13277DE9CA0065D68B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 912EEF11277DE9CA0065D68B /* LaunchScreen.storyboard */; };
 		912EEF232780BA2D0065D68B /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912EEF222780BA2D0065D68B /* WeatherManager.swift */; };
 		912EEF252780C2C70065D68B /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912EEF242780C2C70065D68B /* WeatherData.swift */; };
+		912EEF272781D22C0065D68B /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912EEF262781D22C0065D68B /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		912EEF14277DE9CA0065D68B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		912EEF222780BA2D0065D68B /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		912EEF242780C2C70065D68B /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		912EEF262781D22C0065D68B /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				912EEF222780BA2D0065D68B /* WeatherManager.swift */,
 				912EEF242780C2C70065D68B /* WeatherData.swift */,
+				912EEF262781D22C0065D68B /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				912EEF252780C2C70065D68B /* WeatherData.swift in Sources */,
 				912EEF07277DE9C60065D68B /* AppDelegate.swift in Sources */,
 				912EEF232780BA2D0065D68B /* WeatherManager.swift in Sources */,
+				912EEF272781D22C0065D68B /* WeatherModel.swift in Sources */,
 				912EEF09277DE9C60065D68B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
