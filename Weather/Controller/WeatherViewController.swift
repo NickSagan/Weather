@@ -7,7 +7,12 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController, UITextFieldDelegate {
+class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
+    
+    func didUpdateWeather(weather: WeatherModel) {
+        <#code#>
+    }
+    
     
     var weatherManager = WeatherManager()
     
@@ -26,6 +31,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextfield.delegate = self
+        weatherManager.delegate = self
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -49,6 +55,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
             return false
         }
     }
+    
 
 
 }
