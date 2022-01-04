@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 protocol WeatherManagerDelegate {
-    func didUpdateWeather(weather: WeatherModel)
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
@@ -20,15 +21,15 @@ struct WeatherManager {
     
     func fetchWeather (cityName: String) {
         let urlString = weatherUrl + "&q=" + cityName
-        performRequest(urlString: urlString)
+        performRequest(with: urlString)
     }
     
     func fetchWeather (longitude: Double, latitude: Double) {
         let urlString = "\(weatherUrl)&lon=\(longitude)&lat=\(latitude)"
-        performRequest(urlString: urlString)
+        performRequest(with: urlString)
     }
     
-    func performRequest(urlString: String) {
+    func performRequest(with urlString: String) {
         // 1. URL
         guard let url = URL(string: urlString) else { return }
         
@@ -37,10 +38,10 @@ struct WeatherManager {
         
         // 3. Task
         let task = session.dataTask(with: url) { data, response, error in
-            if error != nil { print(error as Any); return }
+            if error != nil { self.delegate?.didFailWithError(error: error!); return }
             guard let safeData = data else { return }
             guard let weather = self.parseJSON(weatherData: safeData) else { return }
-            self.delegate?.didUpdateWeather(weather: weather)
+            self.delegate?.didUpdateWeather(self, weather: weather)
         }
         
         // 4. Resume
@@ -60,7 +61,7 @@ struct WeatherManager {
             return weather
             
         } catch {
-            print(error)
+            self.delegate?.didFailWithError(error: error)
             return nil
         }
     }
