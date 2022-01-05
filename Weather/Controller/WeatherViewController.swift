@@ -10,12 +10,16 @@ import UIKit
 class WeatherViewController: UIViewController, UITextFieldDelegate, WeatherManagerDelegate {
     
     func didFailWithError(error: Error) {
-        <#code#>
+        
     }
     
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        <#code#>
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weather.temperatureString
+            self.conditionImageView.image = UIImage(systemName: weather.weatherIcon)
+        }
+        
     }
     
     
