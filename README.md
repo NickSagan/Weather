@@ -12,8 +12,8 @@ I made this project to practice using CoreLocation, fetching data from openweath
 * Enter the name of a city in the textfield and the app will show the weather for that city.
 * App will change its appearance depending on day\night cycle
 
-![Weather App](https://github.com/NickSagan/Weather/blob/b64ac0306f9411f37a2573540e2cff722763a2ec/1.jpg?raw=true)
-![Weather App](https://github.com/NickSagan/Weather/blob/b64ac0306f9411f37a2573540e2cff722763a2ec/1.jpg?raw=true)
+![Weather App](https://github.com/NickSagan/Weather/blob/b64ac0306f9411f37a2573540e2cff722763a2ec/2.jpg?raw=true)
+![Weather App](https://github.com/NickSagan/Weather/blob/b64ac0306f9411f37a2573540e2cff722763a2ec/3.jpg?raw=true)
 ![Weather App](https://github.com/NickSagan/Weather/blob/b64ac0306f9411f37a2573540e2cff722763a2ec/1.jpg?raw=true)
 
 # Message me
