@@ -14,6 +14,7 @@ I made this project to practice using CoreLocation, fetching data from openweath
 * Tap the location button and app will request your current location, then it will fetch weather data from API and display it.
 * Enter the name of a city in the textfield and the app will show the weather for that city.
 * App will change its appearance depending on day\night cycle
+* Don't forget to allow location usage:
 
 ![Weather App](https://github.com/NickSagan/Weather/blob/b64ac0306f9411f37a2573540e2cff722763a2ec/1.jpg?raw=true)
 
