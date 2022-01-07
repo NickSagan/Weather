@@ -41,6 +41,7 @@ class WeatherViewController: UIViewController {
 //MARK: - UITextFieldDelegate
 
 extension WeatherViewController: UITextFieldDelegate {
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextfield.endEditing(true)
         return true
@@ -84,11 +85,14 @@ extension WeatherViewController: WeatherManagerDelegate {
 //MARK: - CLLOcationManagerDelegate
 
 extension WeatherViewController: CLLocationManagerDelegate {
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        locationManager.stopUpdatingLocation()
         let lat = location.coordinate.latitude
         let lon = location.coordinate.longitude
         weatherManager.fetchWeather(longitude: lon, latitude: lat)
+        print("didUpdateLocations: \(lat) : \(lon)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
